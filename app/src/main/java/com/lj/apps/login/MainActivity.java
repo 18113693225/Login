@@ -1,32 +1,32 @@
 package com.lj.apps.login;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.ImageView;
+import android.view.View;
+
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
-public class MainActivity extends AppCompatActivity {
-    EditText e1, e2;
-    ImageView m1, m2;
+public class MainActivity extends BaseActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        init();
-
-
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
     }
 
-    private void init() {
-        e1 = (EditText) findViewById(R.id.phone_number);
-        e2 = (EditText) findViewById(R.id.password);
-        m1 = (ImageView) findViewById(R.id.del_phone_number);
-        m2 = (ImageView) findViewById(R.id.del_password);
-        EditTextClearTools.addClearListener(e1, m1);
-        EditTextClearTools.addClearListener(e2, m2);
-
+    @OnClick({R.id.loginButton})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.loginButton:
+                Navigator.startLoginActivity(this);
+                break;
+            default:
+                break;
+        }
     }
+
 }
