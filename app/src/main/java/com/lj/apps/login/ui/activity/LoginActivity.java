@@ -1,8 +1,10 @@
-package com.lj.apps.login;
+package com.lj.apps.login.ui.activity;
 
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.lj.apps.login.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

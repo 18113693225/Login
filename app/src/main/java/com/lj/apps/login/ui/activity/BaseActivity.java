@@ -1,4 +1,4 @@
-package com.lj.apps.login;
+package com.lj.apps.login.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

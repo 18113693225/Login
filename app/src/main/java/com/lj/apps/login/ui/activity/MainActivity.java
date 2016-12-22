@@ -1,8 +1,11 @@
-package com.lj.apps.login;
+package com.lj.apps.login.ui.activity;
 
 
 import android.os.Bundle;
 import android.view.View;
+
+import com.lj.apps.login.Navigator;
+import com.lj.apps.login.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
