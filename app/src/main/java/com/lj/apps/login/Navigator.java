@@ -6,9 +6,6 @@ import android.support.v4.app.ActivityCompat;
 
 import com.lj.apps.login.ui.activity.LoginActivity;
 
-/**
- * Created by LXG on 2016/12/22.
- */
 
 public final class Navigator {
 

@@ -5,13 +5,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.lj.apps.login.R;
+import com.lj.apps.login.utils.EditTextClearTools;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by LXG on 2016/12/22.
- */
 
 public class LoginActivity extends BaseActivity {
 

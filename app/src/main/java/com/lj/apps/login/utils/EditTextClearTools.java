@@ -1,4 +1,4 @@
-package com.lj.apps.login.ui.activity;
+package com.lj.apps.login.utils;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -6,11 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-/**
- * Created by SEELE on 2016-11-04.
- */
 
-public class EditTextClearTools {
+public final class EditTextClearTools {
 
     public static void addClearListener(final EditText e1, final ImageView m1) {
         e1.addTextChangedListener(new TextWatcher() {
