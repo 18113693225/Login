@@ -1,4 +1,4 @@
-package com.lj.apps.login;
+package com.lj.apps.login.ui.activity;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,19 +13,15 @@ import android.widget.ImageView;
 public class EditTextClearTools {
 
     public static void addClearListener(final EditText e1, final ImageView m1) {
-
         e1.addTextChangedListener(new TextWatcher() {
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before,
                                       int count) {
-
             }
 
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count,
                                           int after) {
-
             }
 
             @Override
@@ -36,7 +32,6 @@ public class EditTextClearTools {
                 } else {
                     m1.setVisibility(View.INVISIBLE);
                 }
-
             }
         });
         m1.setOnClickListener(new View.OnClickListener() {
