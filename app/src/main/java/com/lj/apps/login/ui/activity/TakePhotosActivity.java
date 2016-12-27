@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+
 import com.lj.apps.login.R;
 import com.lj.apps.login.ui.widget.ImageRecyclerView;
 
@@ -15,6 +16,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
 
 public class TakePhotosActivity extends BaseActivity implements ImageRecyclerView.OnItemClickListener {
 
@@ -53,4 +55,5 @@ public class TakePhotosActivity extends BaseActivity implements ImageRecyclerVie
     public void onSubjectItemClick(View v, String data, int position) {
         Glide.with(this).load(data).error(R.mipmap.ic_launcher).into(img);
     }
+
 }
