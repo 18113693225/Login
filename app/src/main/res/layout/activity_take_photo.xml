@@ -38,13 +38,14 @@
 
 
     <RelativeLayout
+        android:id="@+id/saveView"
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:background="@drawable/frame">
 
         <uk.co.senab.photoview.PhotoView
             android:id="@+id/img"
-            android:layout_width="240dp"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:layout_marginTop="10dp" />
