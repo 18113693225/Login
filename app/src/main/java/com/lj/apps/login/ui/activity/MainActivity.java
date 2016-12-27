@@ -21,11 +21,14 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.loginButton})
+    @OnClick({R.id.loginButton, R.id.takePhotoButton})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.loginButton:
                 Navigator.startLoginActivity(this);
+                break;
+            case R.id.takePhotoButton:
+                Navigator.startTakePhotoActivity(this);
                 break;
             default:
                 break;
