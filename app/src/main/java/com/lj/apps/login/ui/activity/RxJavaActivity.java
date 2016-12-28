@@ -21,6 +21,7 @@ import io.reactivex.functions.Predicate;
 
 public class RxJavaActivity extends BaseActivity {
 
+    Subscription sub;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,7 @@ public class RxJavaActivity extends BaseActivity {
 
     private void rxLearn() {
 
-        Flowable.range(0, 10).subscribe(new Subscriber<Integer>() {
-            Subscription sub;
+        Flowable.range(0, 5).subscribe(new Subscriber<Integer>() {
 
             @Override
             public void onSubscribe(Subscription s) {
