@@ -32,6 +32,11 @@
             android:name=".ui.activity.TakePhotosActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
+        <!--RxJava页面-->
+        <activity
+            android:name=".ui.activity.RxJavaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
