@@ -1,6 +1,5 @@
 package com.lj.apps.login.ui.activity;
 
-
 import android.os.Bundle;
 import android.util.Log;
 

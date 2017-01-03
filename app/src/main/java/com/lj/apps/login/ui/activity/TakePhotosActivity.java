@@ -13,6 +13,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.lj.apps.login.R;
 import com.lj.apps.login.ui.widget.ImageRecyclerView;
 import com.lj.apps.login.utils.Constant;
+import com.lj.apps.login.utils.tool.SampleSnackBar;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -123,12 +125,12 @@ public class TakePhotosActivity extends BaseActivity implements ImageRecyclerVie
                 MediaStore.Images.Media.insertImage(getContentResolver(), file.getAbsolutePath(), imageName, null);
                 Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(file));
                 sendBroadcast(intent);
-                Toast.makeText(TakePhotosActivity.this, "保存成功", Toast.LENGTH_SHORT).show();
+                SampleSnackBar.showShortSnackBar(img, "保存成功");
             } catch (Exception e) {
                 e.printStackTrace();
             }
         } else {
-            Toast.makeText(TakePhotosActivity.this, "保存失败", Toast.LENGTH_SHORT).show();
+            SampleSnackBar.showShortSnackBar(img, "保存失败");
         }
 
     }
