@@ -5,7 +5,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.lj.apps.login.R;
-import com.lj.apps.login.utils.EditTextClearTools;
+import com.lj.apps.login.utils.tool.EditTextClearTools;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

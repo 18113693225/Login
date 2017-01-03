@@ -1,4 +1,4 @@
-package com.lj.apps.login.utils;
+package com.lj.apps.login.utils.tool;
 
 import android.text.Editable;
 import android.text.TextWatcher;
