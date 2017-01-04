@@ -49,7 +49,6 @@ public class RxJavaActivity extends BaseActivity {
                 .doOnNext(new Consumer<LoginResponse>() {
                     @Override
                     public void accept(LoginResponse loginResponse) throws Exception {
-
                     }
                 })
                 .observeOn(Schedulers.io())

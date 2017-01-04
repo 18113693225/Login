@@ -6,8 +6,8 @@ import android.os.Parcelable;
 
 public class RegisterResponse implements Parcelable {
 
-    int resultcode;
-    String reason;
+    public int resultcode;
+    public String reason;
 
     @Override
     public int describeContents() {
