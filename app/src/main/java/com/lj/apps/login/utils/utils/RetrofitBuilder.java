@@ -13,7 +13,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitBuilder {
 
-
     public static Retrofit create() {
 
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
