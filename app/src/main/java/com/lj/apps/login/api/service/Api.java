@@ -2,6 +2,7 @@ package com.lj.apps.login.api.service;
 
 
 import com.lj.apps.login.model.LoginResponse;
+import com.lj.apps.login.model.RegisterResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -12,5 +13,9 @@ public interface Api {
     @GET("/plan/snew")
     Observable<LoginResponse> login(@Query("key") String key,
                                     @Query("name") String name);
+
+    @GET("/plan/snew")
+    Observable<RegisterResponse> registe(@Query("key") String key,
+                                        @Query("name") String name);
 
 }

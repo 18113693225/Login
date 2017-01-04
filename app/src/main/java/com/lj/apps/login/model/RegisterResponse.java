@@ -4,11 +4,10 @@ package com.lj.apps.login.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class LoginResponse implements Parcelable {
+public class RegisterResponse implements Parcelable {
 
-    public int resultcode;
-    public String reason;
-
+    int resultcode;
+    String reason;
 
     @Override
     public int describeContents() {
@@ -21,23 +20,23 @@ public class LoginResponse implements Parcelable {
         dest.writeString(this.reason);
     }
 
-    public LoginResponse() {
+    public RegisterResponse() {
     }
 
-    protected LoginResponse(Parcel in) {
+    protected RegisterResponse(Parcel in) {
         this.resultcode = in.readInt();
         this.reason = in.readString();
     }
 
-    public static final Creator<LoginResponse> CREATOR = new Creator<LoginResponse>() {
+    public static final Creator<RegisterResponse> CREATOR = new Creator<RegisterResponse>() {
         @Override
-        public LoginResponse createFromParcel(Parcel source) {
-            return new LoginResponse(source);
+        public RegisterResponse createFromParcel(Parcel source) {
+            return new RegisterResponse(source);
         }
 
         @Override
-        public LoginResponse[] newArray(int size) {
-            return new LoginResponse[size];
+        public RegisterResponse[] newArray(int size) {
+            return new RegisterResponse[size];
         }
     };
 }
