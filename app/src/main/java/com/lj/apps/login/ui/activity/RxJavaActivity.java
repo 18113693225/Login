@@ -53,20 +53,17 @@ public class RxJavaActivity extends BaseActivity {
                     }
                 })
                 .observeOn(Schedulers.io())
-                .flatMap(new Function<LoginResponse, ObservableSource<?>>() {
+                .flatMap(new Function<LoginResponse, ObservableSource<RegisterResponse>>() {
                     @Override
-                    public ObservableSource<?> apply(LoginResponse loginResponse) throws Exception {
-                        if (loginResponse.resultcode == 200) {
-                            return api.registe("0d3d25324fe168ce5b72957ff240d6c3", "CZ3869");
-                        }
-                        return api.registe("0d3d25324fe168ce5b72957ff240d6c3", "CZ3869");
+                    public ObservableSource<RegisterResponse> apply(LoginResponse loginResponse) throws Exception {
+                        return api.register("0d3d25324fe168ce5b72957ff240d6c3", "CZ3869");
                     }
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<Object>() {
+                .subscribe(new Consumer<RegisterResponse>() {
 
                     @Override
-                    public void accept(Object o) throws Exception {
+                    public void accept(RegisterResponse registerResponse) throws Exception {
 
                     }
                 });

@@ -15,7 +15,7 @@ public interface Api {
                                     @Query("name") String name);
 
     @GET("/plan/snew")
-    Observable<RegisterResponse> registe(@Query("key") String key,
-                                        @Query("name") String name);
+    Observable<RegisterResponse> register(@Query("key") String key,
+                                          @Query("name") String name);
 
 }
