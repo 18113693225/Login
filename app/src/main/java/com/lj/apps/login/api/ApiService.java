@@ -8,13 +8,11 @@ import retrofit2.Retrofit;
 
 public class ApiService {
 
-
     public static Api createApiService() {
         return retrofit().create(Api.class);
     }
 
-
     private static Retrofit retrofit() {
-        return RetrofitBuilder.getInstance().retrofit();
+        return RetrofitBuilder.create();
     }
 }
