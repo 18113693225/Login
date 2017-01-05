@@ -13,6 +13,6 @@ public class ApiService {
     }
 
     private static Retrofit retrofit() {
-        return RetrofitBuilder.create();
+        return RetrofitBuilder.get().retrofit();
     }
 }

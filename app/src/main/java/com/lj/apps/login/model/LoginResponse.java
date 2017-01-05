@@ -4,11 +4,17 @@ package com.lj.apps.login.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 public class LoginResponse implements Parcelable {
 
-    public int resultcode;
+    @SerializedName("resultcode")
+    public int resultCode;
     public String reason;
 
+
+    public LoginResponse() {
+    }
 
     @Override
     public int describeContents() {
@@ -17,15 +23,12 @@ public class LoginResponse implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(this.resultcode);
+        dest.writeInt(this.resultCode);
         dest.writeString(this.reason);
     }
 
-    public LoginResponse() {
-    }
-
     protected LoginResponse(Parcel in) {
-        this.resultcode = in.readInt();
+        this.resultCode = in.readInt();
         this.reason = in.readString();
     }
 

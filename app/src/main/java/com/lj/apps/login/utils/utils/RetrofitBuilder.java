@@ -13,27 +13,70 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitBuilder {
 
-    public static Retrofit create() {
+    private Retrofit mRetrofit;
+    private OkHttpClient client;
+    private String baseUrl;
 
-        HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-
-        OkHttpClient client = new OkHttpClient.Builder()
-                .connectTimeout(10000L, TimeUnit.MILLISECONDS)       //设置连接超时
-                .readTimeout(10000L, TimeUnit.MILLISECONDS)          //设置读取超时
-                .writeTimeout(10000L, TimeUnit.MILLISECONDS)         //设置写入超时
-                .addInterceptor(interceptor)    //添加日志拦截器（该方法也可以设置公共参数，头信息）
-                .build();
-
-
-        return new Retrofit.Builder()
-                .baseUrl(BuildConfig.API_ENDPOINT)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
-
+    private RetrofitBuilder() {
     }
 
+    // Make this class a thread safe singleton
+    private static class SingletonHolder {
+        private static final RetrofitBuilder INSTANCE = new RetrofitBuilder();
+    }
+
+    public static synchronized RetrofitBuilder get() {
+        return SingletonHolder.INSTANCE;
+    }
+
+
+    public Retrofit retrofit() {
+        if (null == mRetrofit) {
+            mRetrofit = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .build();
+        }
+        return mRetrofit;
+    }
+
+    public static class Builder {
+        private OkHttpClient mClient;
+        private String baseUrl;
+
+        public RetrofitBuilder build() {
+            ensureSaneDefaults();
+            RetrofitBuilder retrofitBuilder = get();
+            retrofitBuilder.baseUrl = baseUrl;
+            retrofitBuilder.client = mClient;
+            return retrofitBuilder;
+        }
+
+        private void ensureSaneDefaults() {
+            if (mClient == null) {
+                mClient = defaultClient();
+            }
+        }
+
+        public Builder baseUrl(String baseUrl) {
+            this.baseUrl = baseUrl;
+            return this;
+        }
+
+        private OkHttpClient defaultClient() {
+            // default interceptors
+            OkHttpClient.Builder builder = new OkHttpClient.Builder();
+            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+            builder.addInterceptor(interceptor);
+            builder.connectTimeout(10000L, TimeUnit.MILLISECONDS);    //设置连接超时
+            builder.readTimeout(10000L, TimeUnit.MILLISECONDS);  //设置读取超时
+            builder.writeTimeout(10000L, TimeUnit.MILLISECONDS);//设置写入超时
+            return builder.build();
+        }
+
+
+    }
 }
