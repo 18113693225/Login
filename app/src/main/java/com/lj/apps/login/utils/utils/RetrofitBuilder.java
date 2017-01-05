@@ -15,7 +15,7 @@ public class RetrofitBuilder {
 
     private Retrofit mRetrofit;
     private OkHttpClient client;
-    private String baseUrl;
+
 
     private RetrofitBuilder() {
     }
@@ -30,7 +30,7 @@ public class RetrofitBuilder {
     }
 
 
-    public Retrofit retrofit() {
+    public Retrofit retrofit(String baseUrl) {
         if (null == mRetrofit) {
             mRetrofit = new Retrofit.Builder()
                     .baseUrl(baseUrl)
@@ -44,12 +44,10 @@ public class RetrofitBuilder {
 
     public static class Builder {
         private OkHttpClient mClient;
-        private String baseUrl;
 
         public RetrofitBuilder build() {
             ensureSaneDefaults();
             RetrofitBuilder retrofitBuilder = get();
-            retrofitBuilder.baseUrl = baseUrl;
             retrofitBuilder.client = mClient;
             return retrofitBuilder;
         }
@@ -58,11 +56,6 @@ public class RetrofitBuilder {
             if (mClient == null) {
                 mClient = defaultClient();
             }
-        }
-
-        public Builder baseUrl(String baseUrl) {
-            this.baseUrl = baseUrl;
-            return this;
         }
 
         private OkHttpClient defaultClient() {

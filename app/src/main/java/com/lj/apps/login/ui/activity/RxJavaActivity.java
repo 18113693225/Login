@@ -30,7 +30,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class RxJavaActivity extends BaseActivity {
 
-    Subscription sub;
     private Api api;
 
     @Override

@@ -13,7 +13,7 @@ public class LoginApp extends Application {
     public void onCreate() {
         super.onCreate();
         //配置RetrofitBuilder
-        new RetrofitBuilder.Builder().baseUrl(BuildConfig.API_ENDPOINT).build();
+        new RetrofitBuilder.Builder().build();
         //leak
         if (LeakCanary.isInAnalyzerProcess(this)) {
             return;

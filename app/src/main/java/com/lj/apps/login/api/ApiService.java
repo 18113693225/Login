@@ -1,5 +1,6 @@
 package com.lj.apps.login.api;
 
+import com.lj.apps.login.BuildConfig;
 import com.lj.apps.login.api.service.Api;
 import com.lj.apps.login.utils.utils.RetrofitBuilder;
 
@@ -13,6 +14,6 @@ public class ApiService {
     }
 
     private static Retrofit retrofit() {
-        return RetrofitBuilder.get().retrofit();
+        return RetrofitBuilder.get().retrofit(BuildConfig.API_ENDPOINT);
     }
 }
