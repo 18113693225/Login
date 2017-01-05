@@ -1,7 +1,6 @@
 package com.lj.apps.login.ui.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.lj.apps.login.R;
 import com.lj.apps.login.api.ApiService;
@@ -9,22 +8,11 @@ import com.lj.apps.login.api.service.Api;
 import com.lj.apps.login.model.LoginResponse;
 import com.lj.apps.login.model.RegisterResponse;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import butterknife.ButterKnife;
-import io.reactivex.Flowable;
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.ObservableSource;
-import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
-import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 

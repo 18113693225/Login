@@ -15,8 +15,9 @@
         tools:replace="android:icon, android:theme">
         <activity
             android:name=".ui.activity.MainActivity"
+            android:label="Android玩具"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -35,8 +36,13 @@
         <!--RxJava页面-->
         <activity
             android:name=".ui.activity.RxJavaActivity"
+            android:label="RxJava"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

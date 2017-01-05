@@ -6,7 +6,6 @@ import com.lj.apps.login.utils.utils.RetrofitBuilder;
 
 import retrofit2.Retrofit;
 
-
 public class ApiService {
 
     public static Api createApiService() {
