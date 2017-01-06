@@ -9,6 +9,10 @@ import com.lj.apps.login.model.LoginResponse;
 import com.lj.apps.login.model.RegisterResponse;
 
 import butterknife.ButterKnife;
+import io.reactivex.BackpressureStrategy;
+import io.reactivex.Flowable;
+import io.reactivex.FlowableEmitter;
+import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -26,6 +30,7 @@ public class RxJavaActivity extends BaseActivity {
         setContentView(R.layout.activity_rxjava);
         ButterKnife.bind(this);
         add();
+        learnRxJava();
     }
 
     private void add() {
@@ -56,4 +61,12 @@ public class RxJavaActivity extends BaseActivity {
 
     }
 
+    private void learnRxJava() {
+        Flowable obserble = Flowable.create(new FlowableOnSubscribe() {
+            @Override
+            public void subscribe(FlowableEmitter e) throws Exception {
+
+            }
+        }, BackpressureStrategy.BUFFER);
+    }
 }
