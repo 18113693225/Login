@@ -15,7 +15,6 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
-
 public class RxJavaActivity extends BaseActivity {
 
     private Api api;

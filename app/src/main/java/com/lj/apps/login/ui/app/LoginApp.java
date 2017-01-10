@@ -19,6 +19,5 @@ public class LoginApp extends Application {
             return;
         }
         LeakCanary.install(this);
-
     }
 }
