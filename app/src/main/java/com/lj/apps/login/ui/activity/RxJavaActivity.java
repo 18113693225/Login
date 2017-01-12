@@ -52,6 +52,6 @@ public class RxJavaActivity extends BaseActivity {
 
                     }
                 });
-
     }
+
 }
