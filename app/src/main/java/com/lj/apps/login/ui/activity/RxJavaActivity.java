@@ -1,6 +1,7 @@
 package com.lj.apps.login.ui.activity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.lj.apps.login.R;
 import com.lj.apps.login.api.ApiService;
@@ -8,6 +9,7 @@ import com.lj.apps.login.api.service.Api;
 import com.lj.apps.login.model.LoginResponse;
 import com.lj.apps.login.model.RegisterResponse;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -18,6 +20,8 @@ import io.reactivex.schedulers.Schedulers;
 public class RxJavaActivity extends BaseActivity {
 
     private Api api;
+    @BindView(R.id.text)
+    TextView text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +53,7 @@ public class RxJavaActivity extends BaseActivity {
 
                     @Override
                     public void accept(RegisterResponse registerResponse) throws Exception {
-
+                        text.setText(registerResponse.reason);
                     }
                 });
     }
